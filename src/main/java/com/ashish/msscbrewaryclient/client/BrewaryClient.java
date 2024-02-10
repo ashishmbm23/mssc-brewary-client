@@ -9,7 +9,7 @@ import java.net.URI;
 import java.util.UUID;
 
 @Component
-@ConfigurationProperties(value = "mssc.brewary.client")
+@ConfigurationProperties(prefix = "mssc.brewary.client", ignoreUnknownFields = false)
 public class BrewaryClient {
     private String apihost;
     private RestTemplate restTemplate;
