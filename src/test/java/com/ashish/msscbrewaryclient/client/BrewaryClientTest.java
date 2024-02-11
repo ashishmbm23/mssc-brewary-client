@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.net.URI;
-import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -40,8 +38,6 @@ class BrewaryClientTest {
                 .upc(11231321331l)
                 .quantityOnHand(100l)
                 .beerStyle("LAGER")
-                .createdDate(OffsetDateTime.of(2024, 2, 10, 12, 0, 0, 0, ZoneOffset.UTC))
-                .lastUpdatedDate(OffsetDateTime.of(2024, 2, 10, 12, 0, 0, 0, ZoneOffset.UTC))
                 .build();
         URI uri = brewaryClient.saveBeer(beerDto);
         assertNotNull(uri);
